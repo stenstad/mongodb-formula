@@ -6,6 +6,8 @@ xenial:
   repo_component: multiverse
   mongodb_package: mongodb-org
 
+  log_stdout: True
+
   mongod: mongod
   conf_path: /etc/mongod.conf
 

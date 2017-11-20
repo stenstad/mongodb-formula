@@ -3,6 +3,8 @@ mongodb:
   # This is useful default with use_repo: True
   version: stable
 
+  log_stdout: False
+
   mongodb_package: mongodb
   keyid: EA312927
   pip: python-pip

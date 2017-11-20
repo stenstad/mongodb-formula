@@ -50,6 +50,7 @@ mongodb_package:
   pkg.installed:
     - name: {{ mdb.mongodb_package }}
 
+{%- if mdb.log_stdout != 'True' %}
 mongodb_log_path:
   file.directory:
     {%- if 'mongod_settings' in mdb %}
@@ -64,6 +65,7 @@ mongodb_log_path:
     - recurse:
       - user
       - group
+{%- endif %}
 
 mongodb_db_path:
   file.directory:
