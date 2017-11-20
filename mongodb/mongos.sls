@@ -29,6 +29,7 @@ mongos_group:
     - name: {{ ms.mongos_group }}
     - system: True
 
+{%- if mdb.log_stdout != 'True' %}
 mongos_log_path:
   file.directory:
 {%- if 'mongos_settings' in ms %}
@@ -40,6 +41,7 @@ mongos_log_path:
     - group: {{ ms.mongos_group }}
     - mode: 755
     - makedirs: True
+{%- endif %}
 
 mongos_init:
   file.managed:
